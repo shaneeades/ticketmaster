@@ -1,0 +1,21 @@
+.filterForm {
+  display: grid;
+  grid-template-columns: [labels] auto [controls] 1fr;
+  grid-auto-flow: row;
+  grid-gap: 0.8em;
+  align-items: center;
+  background: #eee;
+  padding: 1.2em;
+  border-radius: 10px;
+}
+.filterForm > label {
+  grid-column: labels;
+  grid-row: auto;
+}
+.filterForm > input {
+  grid-column: controls;
+  grid-row: auto;
+  border: none;
+  padding: 1em;
+  border-radius: 10px;
+}

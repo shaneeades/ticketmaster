@@ -1,0 +1,23 @@
+<div class="discover-container">
+  <h1>Discover Ticketmaster Events</h1>
+  <app-filter (onFilterChange)=filter($event)></app-filter>
+  <div
+    infinite-scroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="1000"
+    (scrolled)="onScroll()"
+  >
+    <app-event-row class="event-row" *ngFor="let event of events" [event]="event"/>
+  </div>
+  <div *ngIf="events.length === 0 && !isLoading && !isError">
+    No Events found.  Try broadening your search criteria.
+  </div>
+  <div *ngIf="isLoading">
+    <!-- TODO: Use an animated loading spinner here instead of this -->
+    Loading...
+  </div>
+  <div *ngIf="isError" class="error">
+    <!-- TODO: Use a global animated popup to display error details instead of this -->
+    An error has occurred, please try again.
+  </div>
+</div>

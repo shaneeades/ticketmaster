@@ -1,0 +1,14 @@
+.discover-container {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  justify-items: center;
+  row-gap: 15px;
+}
+
+.event-row {
+  margin: 60px;
+}
+
+.error {
+  color: red;
+}

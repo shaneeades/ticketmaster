@@ -1,0 +1,12 @@
+.event-row {
+  display: grid;
+  background: #eee;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.eventName {
+  font-weight: bold;
+  font-size: 1.5em;
+}

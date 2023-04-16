@@ -1,0 +1,20 @@
+<form [formGroup]="filterForm" class="filterForm">
+  <label for="city">City</label>
+  <input id="city" type="text" placeholder="Any" formControlName="city" />
+  <!-- TODO: Make country a droplist -->
+  <label for="country">Country</label>
+  <input
+    id="country"
+    type="text"
+    placeholder="Any"
+    formControlName="countryCode"
+  />
+  <label for="startDateTime">From</label>
+  <input
+    id="startDateTime"
+    type="datetime-local"
+    formControlName="startDateTime"
+  />
+  <label for="endDateTime">To</label>
+  <input id="endDateTime" type="datetime-local" formControlName="endDateTime" />
+</form>
