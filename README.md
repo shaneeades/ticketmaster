@@ -1,27 +1,41 @@
-# Ticketmaster
+# Discover Ticketmaster Events
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+This is a submission for the [Visory engineering challenge](https://github.com/VisoryPlatform/engineering-challenge).
 
-## Development server
+It shows upcoming events sourced from the [Ticketmaster API](https://developer.ticketmaster.com/api-explorer/v2/), and allows filtering by a location and a date range. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The framework chosen was [Angular](https://angular.io/).
 
-## Code scaffolding
+## Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* npm: '9.5.0'
+* node: '18.15.0'
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<code>$ npm install</code> to install package dependencies
 
-## Running unit tests
+## Usage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<code>$ ng test</code> to run unit tests
 
-## Running end-to-end tests
+<code>$ ng serve</code> to run the app, then open your browser to http://localhost:4200/
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Features
 
-## Further help
+* **Automatic filter**. Events are automatically fetched and then reloaded when the user changes the filter.  There is no "Search" button.
+* **Infinite scroll**. This is better UX than having to click on a "Next" button for pagination (IMHO).
+* **Routes**. Although out of scope for this exercise, it shows how this app would be expanded.  For example, clicking on an event would take you to a new route for that event. 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Limitations
+
+Due to time constraints, these issues have not been addressed:
+
+* **It's ugly!** It needs more CSS work to improve the UX.  Perhaps a UI library such as Material could be used.
+* **Unit tests**. There are some unit tests, but coverage is limited.  I've tested it manually.
+* **Country filter**. This should be a droplist.  The Ticketmaster API supports it, and it would be easy to implement.
+* **Form Validation**. The filter should not allow historical dates, nor startDateTime > endDateTime.  Any errors should be shown on the form.
+* **Other UX issues**:
+  * The filter scrolls off the page.  It should remain visible.
+  * The "Loading..." indicator should be an animated spinner instead of text.
+  * Error notification should be a popup instead of text. 
